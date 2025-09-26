@@ -254,9 +254,63 @@
 
 # 🐍 Python Intermediate Concepts//////////////////////
 
+#normal function
+# def add(a, b):
+#     return a + b
+# print(add(2, 3))
+
+#Lambda function Shortcut for small functions
+
+# add = lambda a, b: a + b
+# print(add(10, 20))
+
+# sort a list of tuples by second value
+
+# pairs = [(1, 10), (2, 5), (3, 7)]
+# pairs.sort(key=lambda x: x[1])
+# print("Sort Pairs", pairs)
+
+#Lambda function Shortcut for small functions
 
 
+# 2️⃣ Map, Filter, Reduce ////////////////////////
 
+# numbers = [1, 2, 3, 4, 5]
+
+# Map 
+# squares = list(map(lambda x: x**2, numbers))
+# print("Squares:", squares)
+
+# Filter 
+# numbers = [1, 2, 3, 4, 5]
+# evens = list(filter(lambda x: x % 2 == 0, numbers))
+# print("Evens:", evens)
+
+# Reduce 
+# from functools import reduce
+
+# numbers = [1, 2, 3, 4, 5]
+# product = reduce(lambda a, b: a * b, numbers )
+
+# print("Product:", product)
+
+
+# users = [
+#     {"name": "Ali", "age": 20},
+#     {"name": "Sara", "age": 25},
+#     {"name": "Ahmed", "age": 30}
+# ]
+
+# # extract only names (map)
+# names = list(map(lambda u: u["name"], users))
+
+# # filter adults (age >= 25)
+# adults = list(filter(lambda u: u["age"] >= 25, users))
+
+# print(names)   # ['Ali', 'Sara', 'Ahmed']
+# print(adults)  # [{'name': 'Sara', 'age': 25}, {'name': 'Ahmed', 'age': 30}]
+
+# 2️⃣ Map, Filter, Reduce ////////////////////////
 
 # 🐍 Python Intermediate Concepts//////////////////////
 
