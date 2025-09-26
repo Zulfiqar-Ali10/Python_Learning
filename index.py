@@ -140,7 +140,7 @@
 
 # 🐍 Step 2: Python Data Structures
 
-# 1️⃣ List (JS array jaisa)////////////////////////////
+# 7 List (JS array jaisa)////////////////////////////
 
 # fruits = ["apple", "banana", "mango"]
 
@@ -159,9 +159,9 @@
 # print("Max:", max(numbers))
 # print("Min:", min(numbers))
 
-# 1️⃣ List (JS array jaisa)////////////////////////////
+# 7 List (JS array jaisa)////////////////////////////
 
-# 2️⃣ Tuple (Immutable list)//////////////////////
+# 8 Tuple (Immutable list)//////////////////////
 
 # coordinates = (10, 20, 30, 20)
 
@@ -171,9 +171,9 @@
 # print(coordinates)   
 
 
-# 2️⃣ Tuple (Immutable list)//////////////////////
+# 8 Tuple (Immutable list)//////////////////////
 
-# 3️⃣ Set (Unique values only)/////////////////
+# 9 Set (Unique values only)/////////////////
 
 # nums = {1, 2, 3, 3, 4}
 # print(nums)   # {1, 2, 3, 4}
@@ -184,9 +184,9 @@
 # print(nums)
 
 
-# 3️⃣ Set (Unique values only)/////////////////
+# 9 Set (Unique values only)/////////////////
 
-# 4️⃣ Dictionary (JS object jaisa)///////////////
+# 10 Dictionary (JS object jaisa)///////////////
 
 # student = {
 #     "name": "Ali",
@@ -201,9 +201,9 @@
 # for key, value in student.items():
 #     print(key, ":", value)
 
-# 4️⃣ Dictionary (JS object jaisa)///////////////
+# 10 Dictionary (JS object jaisa)///////////////
 
-# 5️⃣ List Comprehension (Shortcut for loops)
+# 11 List Comprehension (Shortcut for loops)
 
 # squares = [x**2 for x in range(1, 6)]
 # print(squares)  # [1, 4, 9, 16, 25]
@@ -218,9 +218,9 @@
 
 
 
-# 5️⃣ List Comprehension (Shortcut for loops)
+# 11 List Comprehension (Shortcut for loops)
 
-# 6️⃣ File Handling (Read/Write file)/////////////////
+# 12 File Handling (Read/Write file)/////////////////
 
 # Write
 # with open("data.txt", "w") as f:
@@ -232,9 +232,9 @@
 #     print(content)
 
 
-# 6️⃣ File Handling (Read/Write file)/////////////////
+# 12 File Handling (Read/Write file)/////////////////
 
-# 7️⃣ OOP (Classes & Objects)
+# 13 OOP (Classes & Objects)
 
 # class Car:
 #     def __init__(self, brand, model):
@@ -247,13 +247,14 @@
 # car1 = Car("Toyota", "Corolla")
 # car1.drive()
 
-# 7️⃣ OOP (Classes & Objects)
+# 13 OOP (Classes & Objects)
 
 # 🐍 Step 2: Python Data Structures
 
 
 # 🐍 Python Intermediate Concepts//////////////////////
 
+#Lambda 14 //////////////////////////////////////
 #normal function
 # def add(a, b):
 #     return a + b
@@ -272,8 +273,9 @@
 
 #Lambda function Shortcut for small functions
 
+#Lambda 14 //////////////////////////////////////
 
-# 2️⃣ Map, Filter, Reduce ////////////////////////
+# 15 Map, Filter, Reduce ////////////////////////
 
 # numbers = [1, 2, 3, 4, 5]
 
@@ -310,7 +312,165 @@
 # print(names)   # ['Ali', 'Sara', 'Ahmed']
 # print(adults)  # [{'name': 'Sara', 'age': 25}, {'name': 'Ahmed', 'age': 30}]
 
-# 2️⃣ Map, Filter, Reduce ////////////////////////
+# 15 Map, Filter, Reduce ////////////////////////
+
+
+# 16 Iterators & Generators//////////////////////////
+
+# nums = [1, 2, 3]
+# it = iter(nums)
+
+# print(next(it))
+# print(next(it))
+# print(next(it))
+
+
+# def generate_numbers(n):
+#     for i in range(1, n+1):
+#         yield i  # generator returns one item at a time
+
+# gen = generate_numbers(5)
+# for num in gen:
+#     print(num)
+
+
+# 16 Iterators & Generators//////////////////////////
+
+
+# 17 Decorators////////////////////////////////////
+
+# def decorator(func):
+#     def wrapper():
+#         print("Before function call")
+#         func()
+#         print("After function call")
+#     return wrapper
+
+# @decorator
+# def say_hello():
+#     print("Hello!")
+
+# say_hello()
+
+
+# import time
+
+# def timer(func):
+#     def wrapper(*args, **kwargs):
+#         start = time.time()
+#         result = func(*args, **kwargs)
+#         end = time.time()
+#         print(f"Execution time: {end - start:.4f} seconds")
+#         return result
+#     return wrapper
+
+# @timer
+# def slow_function():
+#     time.sleep(2)
+#     print("Done!")
+
+# slow_function()
+
+
+# 17 Decorators////////////////////////////////////
+
+
+# 18 Context Managers (with open)//////////////////////
+
+# with open("test.txt", "w") as f:
+#     f.write("Hello Context Manager!")
+
+
+
+# class CustomContext:
+#     def __enter__(self):
+#         print("Enter block")
+#         return "Resource Ready"
+
+#     def __exit__(self, exc_type, exc_val, exc_tb):
+#         print("Exit block")
+
+# with CustomContext() as res:
+#     print(res)
+
+
+# 18 Context Managers (with open)//////////////////////
+
+
+# 19 Regular Expressions (regex)///////////////////
+
+# import re
+
+# text = "My number is 0300-1234567"
+# pattern = r"\d{4}-\d{7}"
+# match = re.search(pattern, text)
+
+# if match:
+#     print("Number found:", match.group())
+
+
+# emails = ["test@gmail.com", "invalid@", "user@yahoo.com"]
+
+# valid_emails = [e for e in emails if re.match(r"[^@]+@[^@]+\.[^@]+", e)]
+# print(valid_emails)  # ['test@gmail.com', 'user@yahoo.com']
+
+
+# 19 Regular Expressions (regex)///////////////////
+
+
+
+# 20 JSON Handling/////////////////////////////////
+
+# import json
+
+# user = {"name": "Ali", "age": 25}
+
+# # dict → JSON
+# json_str = json.dumps(user)
+
+# # JSON → dict
+# parsed = json.loads(json_str)
+
+# print(json_str)  # {"name": "Ali", "age": 25}
+# print(parsed["name"])  # Ali
+
+
+# data = '''
+# [
+#   {"name": "Ali", "age": 20},
+#   {"name": "Sara", "age": 25}
+# ]
+# '''
+
+# users = json.loads(data)
+# for u in users:
+#     print(u["name"], u["age"])
+
+
+
+# 20 JSON Handling/////////////////////////////////
+
+
+# 21 Datetime Module/////////////////////////////////
+
+# from datetime import datetime
+
+# now = datetime.now()
+# print(now)
+# print(now.strftime("%Y-%m-%d %H:%M:%S"))
+
+
+# from datetime import datetime, timedelta
+
+# today = datetime.today()
+# future = today + timedelta(days=7)
+
+# print("Today:", today.strftime("%Y-%m-%d"))
+# print("After 7 days:", future.strftime("%Y-%m-%d"))
+
+
+# 21 Datetime Module/////////////////////////////////
+
 
 # 🐍 Python Intermediate Concepts//////////////////////
 
